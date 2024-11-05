@@ -1,0 +1,213 @@
+/* Reset and Global Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    animation: slideDown 0.8s ease-out; /* Slide-down animation for header */
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+header nav {
+    margin-top: 0.5rem;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #FFD700;
+}
+
+/* Section Styling */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards; /* Fade-in from bottom animation */
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+}
+
+#products h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards; /* Fade-in animation */
+}
+
+#products .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 1rem;
+    animation: fadeIn 1s ease 0.5s forwards; /* Delayed fade-in */
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards; /* Fade-in effect for product cards */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.product-card p {
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+/* Image and Icon Styling */
+.product-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-icon {
+    transform: scale(1.1);
+}
+
+/* Buttons */
+.buy-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    animation: fadeIn 1s ease 0.8s forwards; /* Delayed fade-in for footer */
+}
+
+/* Keyframe Animations */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    .buy-button {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+}

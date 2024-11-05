@@ -1,0 +1,240 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgb(239, 239, 239);
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+header nav {
+    margin-top: 0.5rem;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #FFD700;
+}
+
+/* Section Styling */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+h1, h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 1rem 0;
+}
+
+/* Centered Products Section */
+#products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem; /* Adjust top padding to control heading position */
+}
+
+#products h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#products p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 600px; /* Restricts width for better readability */
+}
+
+/* Buttons */
+.explore-button, .buy-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.explore-button:hover, .buy-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Product Container Styling */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+    max-width: 1200px; /* Keeps products centered within a limited width */
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.product-card p {
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+/* Image and Icon Styling */
+.product-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-icon {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Scroll Reveal Animation for Sections */
+.section:nth-child(odd) {
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.section:nth-child(even) {
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    .explore-button, .buy-button {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+}
